@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>文字数カウンター</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+        }
+
+        h1 {
+            color: blue;
+        }
+
+        #textInput {
+            width: 80%;
+            padding: 10px;
+            margin-bottom: 20px;
+            font-size: 16px;
+        }
+
+        #counter {
+            font-size: 18px;
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <h1>文字数カウンター</h1>
+
+    <textarea id="textInput" placeholder="ここにテキストを入力してください" oninput="countCharacters()"></textarea>
+    <div id="counter">文字数: 0</div>
+
+    <script>
+        function countCharacters() {
+            const inputText = document.getElementById('textInput').value;
+            const characterCount = inputText.length;
+            document.getElementById('counter').textContent = `文字数: ${characterCount}`;
+        }
+    </script>
+</body>
+</html>
